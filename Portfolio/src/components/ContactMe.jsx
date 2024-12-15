@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,10 @@ const ContactMe = () => {
     message: "",
   });
 
+  const [notification, setNotification] = useState(null); // Notification for success or failure
+  const formRef = useRef(); // Ref for the form element
+
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -15,17 +20,51 @@ const ContactMe = () => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        "service_aa5z02n", // Replace with your EmailJS service ID
+        "template_q46ywo1", // Replace with your EmailJS template ID
+        {
+          from_name: formData.name, // Map to EmailJS variable {{from_name}}
+          from_email: formData.email, // Map to EmailJS variable {{from_email}}
+          message: formData.message, // Map to EmailJS variable {{message}}
+        },
+        "MEIDJx5GE845Nx3dP" // Replace with your EmailJS public key
+      )
+      .then(
+        () => {
+          setNotification("Your message has been sent successfully!"); // Success notification
+          setFormData({ name: "", email: "", message: "" }); // Clear form fields
+        },
+        (error) => {
+          setNotification("Failed to send your message. Please try again."); // Error notification
+          console.error("Email sending failed:", error.text);
+        }
+      );
+
+    // Hide notification after 5 seconds
+    setTimeout(() => {
+      setNotification(null);
+    }, 5000);
   };
 
   return (
     <>
       <h2 className="my-20 text-4xl text-center">Contact Me</h2>
+
+      {/* Notification Popup */}
+      {notification && (
+        <div className="fixed top-10 right-10 bg-purple-600 text-white py-2 px-4 rounded shadow-lg animate-fade">
+          {notification}
+        </div>
+      )}
+
       <div className="max-w-md mt-10 mx-auto mb-24 bg-transparent p-6 rounded-lg shadow-lg border border-purple-400">
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
               htmlFor="name"
