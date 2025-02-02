@@ -2,6 +2,7 @@ import project1 from "../assets/projects/project-1.jpg";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
+import petpal from "../assets/projects/petpal.jpg";
 
 export const HERO_CONTENT = `I am a passionate software engineer with a strong foundation in building dynamic and scalable web applications. As a fresher with a BE in Computer Science & Engineering, I have honed my skills in Core Java, React.js, Web Technologies, MySQL, and Data Structures through academic projects and personal learning. My goal is to continuously learn new technologies and improve my technical skills, contributing to innovative solutions that solve real-world problems and deliver impactful user experiences.`;
 
@@ -33,18 +34,12 @@ export const EDUCATION = [
 
 export const PROJECTS = [
   {
-    title: "Employee Management System",
-    image: project1,
+    title: "PetPal",
+    image: petpal,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "JavaScript", "SpringMVC", "MySQL"],
-  },
-  {
-    title: "Web Template",
-    image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "JavaScript"],
+      "Ever heard a social media platform for pets? PetPal is a social media platform for pets where users can create profiles for their pets, share posts, and connect with other pet owners.",
+    technologies: ["Java","Springboot", "MySQL", "JavaScript", "HTML", "CSS"],
+    link : "https://github.com/Supppiee/Petpal.git",
   },
   {
     title: "Portfolio Website",
@@ -52,8 +47,16 @@ export const PROJECTS = [
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "CSS", "React", "Bootstrap"],
+    link : "https://github.com/Supppiee/Portfolio.git",
   },
-  
+  {
+    title: "Employee Management System",
+    image: project1,
+    description:
+      "Employee Management System is a web application that helps companies manage employee information.",
+    technologies: ["HTML", "CSS", "JavaScript", "SpringMVC", "MySQL"],
+    link : "",
+  },
 ];
 
 export const CONTACT = {

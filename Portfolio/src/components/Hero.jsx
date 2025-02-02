@@ -7,12 +7,12 @@ const Hero = () => {
   return (
     <div className="border-b border-neutral-900 pb-10 lg:mb-35">
       <div className="flex flex-wrap">
-        {/* Left Section */}
+        {}
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
-            {/* Heading Animation */}
+            {}
             <motion.h1
-              initial={{ x: -200, opacity: 0 }} // Slide in from the left
+              initial={{ x: -200, opacity: 0 }} 
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
               className="pb-16 tracking-tight text-4xl font-thin lg:text-8xl lg:mt-16"
@@ -20,19 +20,19 @@ const Hero = () => {
               Suprith H B
             </motion.h1>
 
-            {/* Subtitle Animation */}
+            
             <motion.span
-              initial={{ x: -200, opacity: 0 }} // Slide in from the left
+              initial={{ x: -200, opacity: 0 }} 
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-600 tracking-tight text-transparent bg-clip-text text-3xl"
             >
-              Full Stack Developer
+              Software Developer
             </motion.span>
 
-            {/* Content Animation */}
+            
             <motion.p
-              initial={{ x: -200, opacity: 0 }} // Slide in from the left
+              initial={{ x: -200, opacity: 0 }} 
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="my-2 py-9 tracking-tighter font-thin max-w-xl"
@@ -42,10 +42,10 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Section */}
+        
         <div className="w-full lg:w-1/2 lg:p-8">
           <motion.div
-            initial={{ x: 200, opacity: 0 }} // Slide in from the right
+            initial={{ x: 200, opacity: 0 }} 
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex justify-center"
