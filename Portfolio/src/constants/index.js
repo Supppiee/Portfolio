@@ -1,8 +1,6 @@
 import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
 import petpal from "../assets/projects/petpal.jpg";
+import imagePortfolio from "../assets/projects/imagePortfolio.jpg";
 
 export const HERO_CONTENT = `I am a passionate software engineer with a strong foundation in building dynamic and scalable web applications. As a fresher with a BE in Computer Science & Engineering, I have honed my skills in Core Java, React.js, Web Technologies, MySQL, and Data Structures through academic projects and personal learning. My goal is to continuously learn new technologies and improve my technical skills, contributing to innovative solutions that solve real-world problems and deliver impactful user experiences.`;
 
@@ -43,7 +41,7 @@ export const PROJECTS = [
   },
   {
     title: "Portfolio Website",
-    image: project3,
+    image: imagePortfolio,
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "CSS", "React", "Bootstrap"],
